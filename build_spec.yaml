@@ -1,0 +1,18 @@
+version: 0.1
+
+component: build
+
+shell: bash
+
+steps:
+  - type: Command
+    name: "Install"
+    command: |
+      echo "Installing..."
+      npm install
+
+  - type: Command
+    name: "Build"
+    command: |
+      echo "Building..."
+      npm run build
