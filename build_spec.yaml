@@ -6,13 +6,35 @@ shell: bash
 
 steps:
   - type: Command
-    name: "Install"
+    name: "Detect & Install"
     command: |
-      echo "Installing..."
-      npm install
+      echo "Checking project type..."
+
+      if [ -f package.json ]; then
+        echo "Node.js project detected"
+        npm install
+
+      elif [ -f requirements.txt ]; then
+        echo "Python project detected"
+        pip install -r requirements.txt
+
+      elif [ -f pom.xml ]; then
+        echo "Java Maven project detected"
+        mvn clean install
+
+      else
+        echo "No dependency file found, skipping install"
+      fi
 
   - type: Command
     name: "Build"
     command: |
-      echo "Building..."
-      npm run build
+      if [ -f package.json ]; then
+        npm run build || echo "No build script, skipping"
+
+      elif [ -f pom.xml ]; then
+        mvn package
+
+      else
+        echo "No build step required"
+      fi
