@@ -1,0 +1,60 @@
+pipeline {
+
+    agent any
+
+    environment {
+        MAVEN_HOME = tool 'Maven'
+        JAVA_HOME = tool 'JDK17'
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+
+                git branch: 'main',
+                url: 'https://github.com/SanjaiHarish/Contact_List'
+
+            }
+        }
+
+        stage('Build') {
+            steps {
+
+                dir('SongPlaylistApp') {
+
+                    bat "\"${MAVEN_HOME}\\bin\\mvn.cmd\" clean compile"
+
+                }
+            }
+        }
+
+        stage('Package') {
+            steps {
+
+                dir('SongPlaylistApp') {
+
+                    bat "\"${MAVEN_HOME}\\bin\\mvn.cmd\" package -Dmaven.test.skip=true"
+
+                }
+            }
+        }
+    }
+
+    post {
+
+        success {
+
+            echo 'Build Successful!'
+
+            archiveArtifacts artifacts: '**/target/*.jar',
+            fingerprint: true
+        }
+
+        failure {
+
+            echo 'Build Failed!'
+
+        }
+    }
+}
