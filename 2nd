@@ -1,0 +1,30 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+    'Date': ['1-May', '2-May', '3-May', '4-May'],
+    'Min_Temp': [25, 26, None, 24],
+    'Max_Temp': [35, None, 38, 36]
+}
+
+df = pd.DataFrame(data)
+
+df['Min_Temp'] = df['Min_Temp'].fillna(df['Min_Temp'].mean())
+df['Max_Temp'] = df['Max_Temp'].fillna(df['Max_Temp'].mean())
+
+df['Average_Temp'] = (df['Min_Temp'] + df['Max_Temp']) / 2
+
+print(df)
+
+highest_temp = df.loc[df['Average_Temp'].idxmax()]
+
+print("\nDate with Highest Average Temperature:")
+print(highest_temp['Date'])
+
+plt.plot(df['Date'], df['Average_Temp'], marker='o')
+
+plt.title("Average Temperature Trend")
+plt.xlabel("Date")
+plt.ylabel("Average Temperature")
+
+plt.show()
