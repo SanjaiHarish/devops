@@ -1,0 +1,33 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+    'Date': ['1-May', '2-May', '3-May', '4-May'],
+    'Vehicle_Count': [120, None, 180, 150]
+}
+
+df = pd.DataFrame(data)
+
+df['Vehicle_Count'] = df['Vehicle_Count'].fillna(0)
+
+print(df)
+
+total_traffic = df['Vehicle_Count'].sum()
+average_traffic = df['Vehicle_Count'].mean()
+
+print("\nTotal Vehicle Count:", total_traffic)
+print("Average Vehicle Count:", average_traffic)
+
+
+highest_traffic = df.loc[df['Vehicle_Count'].idxmax()]
+
+print("\nHighest Traffic Date:")
+print(highest_traffic['Date'])
+
+plt.plot(df['Date'], df['Vehicle_Count'], marker='o')
+
+plt.title("Daily Traffic Volume")
+plt.xlabel("Date")
+plt.ylabel("Vehicle Count")
+
+plt.show()
