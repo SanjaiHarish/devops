@@ -1,0 +1,34 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+    'Product': ['Laptop', 'Phone', 'Tablet', 'Laptop', 'Phone'],
+    'Quantity': [2, 5, 3, 1, 4],
+    'Price': [50000, 20000, None, 52000, 21000]
+}
+
+df = pd.DataFrame(data)
+
+df['Price'] = df.groupby('Product')['Price'].transform(
+    lambda x: x.fillna(x.mean())
+)
+
+df['Price'] = df['Price'].fillna(df['Price'].mean())
+
+df['Total_Sales'] = df['Quantity'] * df['Price']
+
+print(df)
+
+
+sales = df.groupby('Product')['Total_Sales'].sum()
+
+print("\nHighest Sales Product:")
+print(sales.idxmax())
+
+sales.plot(kind='bar')
+
+plt.title("Total Sales by Product")
+plt.xlabel("Product")
+plt.ylabel("Total Sales")
+
+plt.show()
