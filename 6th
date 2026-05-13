@@ -1,0 +1,48 @@
+# Video to Image Frames Conversion using OpenCV
+
+import cv2
+import os
+
+# Read the video from specified path
+cam = cv2.VideoCapture("E:\\MDCS\\LAB\\EXP6\\vid.mp4")
+
+try:
+    # Creating a folder named data
+    if not os.path.exists('data'):
+        os.makedirs('data')
+
+# If not created then raise error
+except OSError:
+    print('Error: Creating directory of data')
+
+# Frame counter
+currentframe = 0
+
+while True:
+
+    # Reading frame from video
+    ret, frame = cam.read()
+
+    if ret:
+
+        # Create image name
+        name = './data/frame' + str(currentframe) + '.jpg'
+
+        print('Creating...' + name)
+
+        # Save frame as image
+        cv2.imwrite(name, frame)
+
+        # Increase counter
+        currentframe += 1
+
+    else:
+        break
+
+# Release video object
+cam.release()
+
+# Close all windows
+cv2.destroyAllWindows()
+
+print("Video converted into images successfully")
