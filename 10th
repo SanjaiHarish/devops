@@ -1,0 +1,14 @@
+import queue
+
+scheduler = queue.PriorityQueue()
+
+scheduler.put((2, "Video Stream"))
+scheduler.put((1, "Audio Stream"))
+scheduler.put((3, "File Download"))
+
+print("Processing Requests:\n")
+
+while not scheduler.empty():
+    request = scheduler.get()
+
+    print("Priority:", request[0], "-", request[1])
