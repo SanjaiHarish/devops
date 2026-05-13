@@ -1,0 +1,31 @@
+# Lempel-Ziv (LZ78) Encoding Program
+
+input_str = 'AAAABBCDEABCDABCAAABCDEEEEEECBBBBBBDDAAE'
+
+keys_dict = {}
+
+ind = 0
+inc = 1
+
+while True:
+
+    # Stop condition
+    if not (len(input_str) >= ind + inc):
+        break
+
+    # Get substring
+    sub_str = input_str[ind: ind + inc]
+
+    print(sub_str, ind, inc)
+
+    # Check substring in dictionary
+    if sub_str in keys_dict:
+        inc += 1
+    else:
+        keys_dict[sub_str] = 0
+        ind += inc
+        inc = 1
+
+# Print dictionary contents
+print("\nDictionary Entries:")
+print(list(keys_dict))
