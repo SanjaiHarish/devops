@@ -1,0 +1,22 @@
+class DiskArray:
+
+    def __init__(self, disks):
+        self.disks = [[] for i in range(disks)]
+
+    def store(self, data):
+        for i, block in enumerate(data):
+            disk_no = i % len(self.disks)
+
+            self.disks[disk_no].append(block)
+
+    def display(self):
+        for i, disk in enumerate(self.disks):
+            print("Disk", i + 1, ":", disk)
+
+array = DiskArray(3)
+
+data_blocks = ["A", "B", "C", "D", "E", "F"]
+
+array.store(data_blocks)
+
+array.display()
