@@ -1,0 +1,14 @@
+#!/bin/bash
+
+for file in *.png *.jpeg *.bmp *.gif
+do
+    if [ -f "$file" ]; then
+        name=$(basename "$file" | cut -d. -f1)
+
+        convert "$file" "$name.jpg"
+
+        echo "$file converted to $name.jpg"
+    fi
+done
+
+echo "Conversion Completed"
