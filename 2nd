@@ -1,0 +1,20 @@
+def run_length_encode(data):
+    encoded = ""
+    count = 1
+
+    for i in range(len(data) - 1):
+        if data[i] == data[i + 1]:
+            count += 1
+        else:
+            encoded += data[i] + str(count)
+            count = 1
+
+    encoded += data[-1] + str(count)
+    return encoded
+
+text = "wwwwaaadexxxxxxywww"
+
+result = run_length_encode(text)
+
+print("Original:", text)
+print("Encoded :", result)
