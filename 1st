@@ -1,0 +1,42 @@
+from collections import Counter
+import heapq
+
+class Node:
+    def __init__(self, freq, symbol, left=None, right=None):
+        self.freq = freq
+        self.symbol = symbol
+        self.left = left
+        self.right = right
+
+    def __lt__(self, other):
+        return self.freq < other.freq
+
+def generate_codes(node, code="", codes={}):
+    if node:
+        if node.symbol:
+            codes[node.symbol] = code
+        generate_codes(node.left, code + "0", codes)
+        generate_codes(node.right, code + "1", codes)
+    return codes
+
+text = "BCAADDDCCACACACABABABABAB"
+
+freq = Counter(text)
+
+heap = []
+for key, value in freq.items():
+    heapq.heappush(heap, Node(value, key))
+
+while len(heap) > 1:
+    left = heapq.heappop(heap)
+    right = heapq.heappop(heap)
+
+    merged = Node(left.freq + right.freq, None, left, right)
+    heapq.heappush(heap, merged)
+
+root = heap[0]
+codes = generate_codes(root)
+
+print("Huffman Codes:")
+for char, code in codes.items():
+    print(char, ":", code)
