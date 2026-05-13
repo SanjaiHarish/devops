@@ -1,0 +1,32 @@
+class MediaServer:
+
+    def __init__(self):
+        self.views = {}
+
+    def add_request(self, content):
+        if content in self.views:
+            self.views[content] += 1
+        else:
+            self.views[content] = 1
+
+    def display_popularity(self):
+        print("\nPopularity Report")
+
+        for content, count in self.views.items():
+            print(content, ":", count)
+
+server = MediaServer()
+
+requests = [
+    "Movie1",
+    "Movie2",
+    "Movie1",
+    "Movie3",
+    "Movie1",
+    "Movie2"
+]
+
+for item in requests:
+    server.add_request(item)
+
+server.display_popularity()
