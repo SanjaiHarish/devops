@@ -1,227 +1,110 @@
 Aim
 
-To create and manage virtual machines in Oracle Cloud by configuring operating systems and monitoring performance.
+To study how an insurance company manages customer leads using digital marketing techniques.
 
-Requirements
-Oracle Cloud Account
-Internet Connection
-SSH Client (PowerShell or PuTTY)
-Step 1: Login to Oracle Cloud
+Beginner Level Exact Steps
+Step 1: Open Browser
 
-Open:
+Open Google Chrome.
 
-Oracle Cloud Console
+Step 2: Open Insurance Company Website
 
-Enter:
+Open any insurance company website.
 
-Username
-Password
+Examples:
 
-Click:
+LIC India
+PolicyBazaar
+Step 3: Observe Customer Inquiry Process
 
-Sign In
+On homepage observe:
 
-Step 2: Open Compute Service
+Contact forms
+Policy enquiry
+Quote request
+Customer support
+Step 4: Fill Sample Inquiry Form
 
-Click:
+Enter sample details:
 
-☰ Menu
-→ Compute
-→ Instances
-
-Step 3: Create New Virtual Machine
-
-Click:
-
-Create Instance
-
-Step 4: Configure Instance Details
-
-Fill:
-
-Field	Value
-Name	MyVM
-Compartment	MyLabCompartment
-Step 5: Select Operating System
-
-Under:
-
-Image and Shape
-
-Click:
-
-Edit
-
-Choose:
-
-Image = Oracle Linux
-
-Click:
-
-Select Image
-
-Step 6: Select Shape
-
-Click:
-
-Change Shape
-
-Choose:
-
-VM.Standard.E2.1.Micro
-(Always Free Eligible)
-
-Click:
-
-Select Shape
-
-Step 7: Configure Networking
-
-Keep default VCN settings.
-
-Ensure:
-
-Assign Public IPv4 Address = Enabled
-Step 8: Add SSH Keys
-
-Under:
-
-Add SSH Keys
-
-Select:
-
-Generate a key pair for me
-
-Download:
-
-Private Key
-Public Key
-
-Store safely.
-
-Step 9: Create Virtual Machine
-
-Click:
-
-Create
-
-Wait 2–5 minutes.
-
-Status changes to:
-
-Running
-
-Step 10: Copy Public IP Address
-
-Open instance page.
-
-Copy:
-
-Public IP Address
+Name
+Mobile number
+Email
+Insurance type
 
 Example:
 
-152.xxx.xxx.xxx
-Step 11: Connect to VM Using SSH
+Field	Example
+Name	Ravi
+Insurance Type	Health Insurance
 
-Open PowerShell.
+Do not submit real personal information unnecessarily.
 
-Run:
+Step 5: Study Lead Collection Process
 
-ssh -i privatekey.key opc@your_public_ip
+Understand how company collects customer leads from:
 
-Example:
+Website forms
+Social media ads
+Email campaigns
+Mobile apps
+Step 6: Study CRM Usage
 
-ssh -i ssh-key.key opc@152.xxx.xxx.xxx
+Read about CRM (Customer Relationship Management).
+
+Insurance companies use CRM to:
+
+Store customer details
+Track leads
+Follow customer status
+Manage communication
+Step 7: Observe Follow-Up Methods
+
+Companies contact customers through:
+
+Phone calls
+SMS
+Emails
+WhatsApp messages
+Step 8: Study Lead Conversion
+
+Observe how leads become customers.
+
+Example Process:
+
+Customer visits website
+Fills inquiry form
+Company contacts customer
+Policy details explained
+Customer buys insurance policy
+Step 9: Prepare Simple Flow Diagram
+Customer Visit → Inquiry Form → CRM Storage → Follow-Up → Policy Purchase
+Step 10: Write Advantages
+Advantages of Lead Management
+Better customer tracking
+Faster response
+Improved sales
+Organized customer data
+Better communication
+Step 11: Create Report in MS Word
 
 Type:
 
-yes
+Aim
+Procedure
+Lead management process
+Advantages
+Conclusion
 
-Connected successfully.
+Save as:
 
-Step 12: Check System Information
+InsuranceLeadManagement.docx
+Step 12: Take Screenshots
 
-Run:
+Take screenshots of:
 
-uname -a
+Insurance website
+Inquiry forms
+CRM explanation pages
 
-Check memory:
-
-free -m
-
-Check disk:
-
-df -h
-Step 13: Monitor CPU Usage
-
-Run:
-
-top
-
-This displays:
-
-CPU usage
-Memory usage
-Running processes
-
-Press:
-
-q
-
-to exit.
-
-Step 14: Restart Virtual Machine
-
-Go to OCI Console.
-
-Click:
-
-More Actions
-→ Reboot
-
-Wait for restart.
-
-Step 15: Stop Virtual Machine
-
-Click:
-
-Stop
-
-Instance status changes to:
-
-Stopped
-
-Step 16: Start Virtual Machine Again
-
-Click:
-
-Start
-
-VM becomes active again.
-
-Step 17: Delete Virtual Machine (Optional)
-
-Click:
-
-Terminate
-
-Select:
-
-Permanently Delete Attached Boot Volume
-
-Click:
-
-Terminate Instance
-
-Implementation & Result
-
-Successfully:
-
-Created virtual machine
-Configured operating system
-Connected using SSH
-Monitored system performance
-Restarted and stopped VM
-
-Virtual machine management completed successfully.
+(Useful for practical record)
