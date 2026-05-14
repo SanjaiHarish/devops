@@ -1,0 +1,177 @@
+Aim
+
+To develop a simple cost model for deploying an application in Oracle Cloud.
+
+Requirements
+Oracle Cloud Account
+Internet Connection
+Browser
+Calculator or Excel Sheet
+Step 1: Login to Oracle Cloud
+
+Open browser.
+
+Go to:
+
+Oracle Cloud Login
+
+Enter:
+
+Username
+Password
+
+Click:
+
+Sign In
+
+Step 2: Open Cost Estimator
+
+Open:
+
+Oracle Cloud Pricing Calculator
+
+This tool calculates cloud cost.
+
+Step 3: Select Compute Service
+
+Click:
+
+Add Service
+
+Select:
+
+Compute
+
+Now configure VM.
+
+Step 4: Configure Virtual Machine
+
+Choose:
+
+Instance Type = VM.Standard.E2.1.Micro
+Number of Instances = 1
+Operating System = Oracle Linux
+
+Usage:
+
+720 Hours per month
+
+Click:
+
+Add
+
+Now compute cost is added.
+
+Step 5: Add Storage Service
+
+Click:
+
+Add Service
+
+Select:
+
+Block Storage
+
+Enter:
+
+Storage Size = 100 GB
+
+Click:
+
+Add
+
+Storage cost will appear.
+
+Step 6: Add Database Service
+
+Click:
+
+Add Service
+
+Select:
+
+Database
+
+Choose:
+
+Autonomous Database
+Small Configuration
+
+Click:
+
+Add
+
+Database cost is added.
+
+Step 7: Add Network Usage
+
+Click:
+
+Add Service
+
+Select:
+
+Data Transfer
+
+Enter:
+
+Outbound Data = 50 GB
+
+Click:
+
+Add
+
+Network cost is calculated.
+
+Step 8: View Total Cost
+
+Now calculator shows:
+
+Compute Cost
+Storage Cost
+Database Cost
+Network Cost
+
+Example:
+
+Service	Monthly Cost
+Compute	₹2500
+Storage	₹500
+Database	₹1500
+Network	₹300
+
+Total:
+
+₹4800 per month
+Step 9: Save Screenshot
+
+Take screenshot of:
+
+Cost estimator page
+Total monthly cost
+
+This can be used in:
+
+Record
+Observation
+Viva
+Step 10: Prepare Cost Report
+
+Write in record:
+
+Compute Cost = ₹2500
+Storage Cost = ₹500
+Database Cost = ₹1500
+Network Cost = ₹300
+
+Total Monthly Cost = ₹4800
+Implementation & Result
+
+Successfully:
+
+Estimated compute cost
+Calculated storage expense
+Estimated database charges
+Calculated network transfer cost
+
+Cloud application monthly cost was estimated successfully
