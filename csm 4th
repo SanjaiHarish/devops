@@ -1,0 +1,155 @@
+Aim
+
+To create billing alerts in Oracle Cloud for monitoring cloud spending and budget limits.
+
+Requirements
+Oracle Cloud Account
+Internet Connection
+Email ID
+Step 1: Login to Oracle Cloud
+
+Open:
+
+Oracle Cloud Console
+
+Enter:
+
+Username
+Password
+
+Click:
+
+Sign In
+
+Step 2: Open Billing Section
+
+Click:
+
+☰ Menu (Top Left)
+
+Go to:
+
+Billing & Cost Management
+→ Budgets
+
+If not visible:
+Use search bar and type:
+
+Budgets
+
+Step 3: Create Budget
+
+Click:
+
+Create Budget
+
+Step 4: Enter Budget Details
+
+Fill the fields:
+
+Field	Value
+Name	MonthlyBudget
+Compartment	Root Compartment
+Budget Amount	1000 INR
+
+Select:
+
+Monthly Budget Reset
+
+Step 5: Add Alert Rule
+
+Scroll down to:
+
+Alert Rules
+
+Click:
+
+Add Alert Rule
+
+Step 6: Configure Alert Percentage
+
+Enter:
+
+Threshold	Meaning
+50	Alert at 50% usage
+80	Alert at 80% usage
+100	Alert at full budget
+
+You can add multiple alerts.
+
+Step 7: Add Email Notification
+
+Under:
+
+Recipients
+
+Enter:
+
+Your Email Address
+
+Example:
+
+abc@gmail.com
+Step 8: Save Budget
+
+Click:
+
+Create Budget
+
+Budget alert configuration is completed.
+
+Step 9: Verify Email
+
+Check your email inbox.
+
+Oracle may send:
+
+Budget Notification Confirmation
+
+Verify if needed.
+
+Step 10: View Budget Dashboard
+
+Now you can see:
+
+Current Spending
+Budget Amount
+Forecast Cost
+Alert Rules
+
+inside:
+
+Billing Dashboard
+
+Step 11: Test Billing Alert
+
+If your cloud usage increases:
+
+Oracle automatically sends email alerts.
+
+Example:
+
+50% budget reached
+80% budget reached
+Step 12: Monitor Spending
+
+Go regularly to:
+
+Billing & Cost Management
+→ Cost Analysis
+
+You can monitor:
+
+Daily spending
+Monthly spending
+Service-wise spending
+Implementation & Result
+
+Successfully:
+
+Created monthly budget
+Configured billing thresholds
+Added email notifications
+Enabled budget monitoring
+
+Billing alerts were configured successfully.
