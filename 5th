@@ -1,14 +1,194 @@
-#!/bin/bash
+Aim
 
-for file in *.png *.jpeg *.bmp *.gif
-do
-    if [ -f "$file" ]; then
-        name=$(basename "$file" | cut -d. -f1)
+To configure Oracle Cloud storage services for storing application files, backups, and user data securely.
 
-        convert "$file" "$name.jpg"
+Requirements
+Oracle Cloud Account
+Internet Connection
+Sample files for upload
+Step 1: Login to Oracle Cloud
 
-        echo "$file converted to $name.jpg"
-    fi
-done
+Open:
 
-echo "Conversion Completed"
+Oracle Cloud Console
+
+Enter:
+
+Username
+Password
+
+Click:
+
+Sign In
+
+Step 2: Open Storage Service
+
+Click:
+
+☰ Menu (Top Left)
+
+Go to:
+
+Storage
+→ Buckets
+
+If not visible:
+Search:
+
+Buckets
+
+Step 3: Select Compartment
+
+On left side:
+
+Select your compartment.
+
+Example:
+
+MyLabCompartment
+Step 4: Create Bucket
+
+Click:
+
+Create Bucket
+
+Step 5: Enter Bucket Details
+
+Fill:
+
+Field	Value
+Bucket Name	my-storage-bucket
+Default Storage Tier	Standard
+Encryption	Oracle Managed Key
+
+Keep other settings default.
+
+Click:
+
+Create
+
+Bucket is created successfully.
+
+Step 6: Open Bucket
+
+Click:
+
+my-storage-bucket
+
+Now bucket dashboard opens.
+
+Step 7: Upload Files
+
+Click:
+
+Upload
+
+Choose:
+
+PDF
+Image
+Text file
+Backup file
+
+Click:
+
+Upload Files
+
+Wait until upload completes.
+
+Step 8: Verify Uploaded Files
+
+Inside bucket you can see:
+
+File name
+Size
+Upload time
+
+This confirms upload success.
+
+Step 9: Download File Test
+
+Click:
+
+Three Dots (⋮)
+
+Select:
+
+Download
+
+Verify file downloads properly.
+
+Step 10: Configure Bucket Visibility
+
+Go to:
+
+Edit Visibility
+
+Select:
+
+Private Bucket
+
+Click:
+
+Save Changes
+
+This keeps files secure.
+
+Step 11: Configure User Access
+
+Go to:
+
+Identity & Security
+→ Policies
+
+Click:
+
+Create Policy
+
+Enter:
+
+Field	Value
+Name	StoragePolicy
+
+Policy statement:
+
+Allow group Developers to manage object-family in compartment MyLabCompartment
+
+Click:
+
+Create
+
+Now authorized users can access storage.
+
+Step 12: Monitor Storage Usage
+
+Go to:
+
+Bucket Details
+
+Check:
+
+Storage used
+Number of objects
+Bucket size
+Step 13: Delete File (Optional)
+
+Select uploaded file.
+
+Click:
+
+Delete
+
+This demonstrates storage management.
+
+Implementation & Result
+
+Successfully:
+
+Created storage bucket
+Uploaded files
+Downloaded files
+Configured bucket security
+Applied access policies
+
+Cloud storage service was configured successfully.
