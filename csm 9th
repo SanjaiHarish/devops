@@ -1,0 +1,227 @@
+Aim
+
+To create and manage virtual machines in Oracle Cloud by configuring operating systems and monitoring performance.
+
+Requirements
+Oracle Cloud Account
+Internet Connection
+SSH Client (PowerShell or PuTTY)
+Step 1: Login to Oracle Cloud
+
+Open:
+
+Oracle Cloud Console
+
+Enter:
+
+Username
+Password
+
+Click:
+
+Sign In
+
+Step 2: Open Compute Service
+
+Click:
+
+☰ Menu
+→ Compute
+→ Instances
+
+Step 3: Create New Virtual Machine
+
+Click:
+
+Create Instance
+
+Step 4: Configure Instance Details
+
+Fill:
+
+Field	Value
+Name	MyVM
+Compartment	MyLabCompartment
+Step 5: Select Operating System
+
+Under:
+
+Image and Shape
+
+Click:
+
+Edit
+
+Choose:
+
+Image = Oracle Linux
+
+Click:
+
+Select Image
+
+Step 6: Select Shape
+
+Click:
+
+Change Shape
+
+Choose:
+
+VM.Standard.E2.1.Micro
+(Always Free Eligible)
+
+Click:
+
+Select Shape
+
+Step 7: Configure Networking
+
+Keep default VCN settings.
+
+Ensure:
+
+Assign Public IPv4 Address = Enabled
+Step 8: Add SSH Keys
+
+Under:
+
+Add SSH Keys
+
+Select:
+
+Generate a key pair for me
+
+Download:
+
+Private Key
+Public Key
+
+Store safely.
+
+Step 9: Create Virtual Machine
+
+Click:
+
+Create
+
+Wait 2–5 minutes.
+
+Status changes to:
+
+Running
+
+Step 10: Copy Public IP Address
+
+Open instance page.
+
+Copy:
+
+Public IP Address
+
+Example:
+
+152.xxx.xxx.xxx
+Step 11: Connect to VM Using SSH
+
+Open PowerShell.
+
+Run:
+
+ssh -i privatekey.key opc@your_public_ip
+
+Example:
+
+ssh -i ssh-key.key opc@152.xxx.xxx.xxx
+
+Type:
+
+yes
+
+Connected successfully.
+
+Step 12: Check System Information
+
+Run:
+
+uname -a
+
+Check memory:
+
+free -m
+
+Check disk:
+
+df -h
+Step 13: Monitor CPU Usage
+
+Run:
+
+top
+
+This displays:
+
+CPU usage
+Memory usage
+Running processes
+
+Press:
+
+q
+
+to exit.
+
+Step 14: Restart Virtual Machine
+
+Go to OCI Console.
+
+Click:
+
+More Actions
+→ Reboot
+
+Wait for restart.
+
+Step 15: Stop Virtual Machine
+
+Click:
+
+Stop
+
+Instance status changes to:
+
+Stopped
+
+Step 16: Start Virtual Machine Again
+
+Click:
+
+Start
+
+VM becomes active again.
+
+Step 17: Delete Virtual Machine (Optional)
+
+Click:
+
+Terminate
+
+Select:
+
+Permanently Delete Attached Boot Volume
+
+Click:
+
+Terminate Instance
+
+Implementation & Result
+
+Successfully:
+
+Created virtual machine
+Configured operating system
+Connected using SSH
+Monitored system performance
+Restarted and stopped VM
+
+Virtual machine management completed successfully.
