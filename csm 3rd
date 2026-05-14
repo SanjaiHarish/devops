@@ -1,0 +1,179 @@
+Aim
+
+To configure monitoring alerts for CPU, storage, and bandwidth usage in Oracle Cloud.
+
+Requirements
+Oracle Cloud Account
+Running Compute Instance
+Internet Connection
+Step 1: Login to Oracle Cloud
+
+Open:
+
+Oracle Cloud Console
+
+Enter:
+
+Username
+Password
+
+Click:
+
+Sign In
+
+Step 2: Open Navigation Menu
+
+Click:
+
+☰ Menu (Top Left)
+
+Step 3: Open Monitoring Service
+
+Go to:
+
+Observability & Management
+→ Monitoring
+→ Alarm Definitions
+
+(If not visible, use search bar and type “Alarm Definitions”)
+
+Step 4: Create Alarm
+
+Click:
+
+Create Alarm
+
+Step 5: Enter Alarm Details
+
+Fill:
+
+Field	Value
+Alarm Name	CPUAlert
+Compartment	Your Compartment
+Metric Namespace	oci_computeagent
+Metric Name	CpuUtilization
+Step 6: Select Target Resource
+
+Under:
+
+Resource Group / Dimension
+
+Select:
+
+Your Compute Instance
+Step 7: Configure Threshold
+
+Set:
+
+Option	Value
+Operator	Greater Than
+Threshold	80
+
+Meaning:
+
+Alert triggers when CPU usage exceeds 80%.
+Step 8: Configure Trigger Rule
+
+Select:
+
+Option	Value
+Trigger Delay	1 minute
+Interval	1 minute
+Step 9: Configure Notification
+
+Scroll down.
+
+Under:
+
+Notifications
+
+Click:
+
+Create Topic
+
+Enter:
+
+Topic Name = AlertTopic
+
+Click:
+
+Create
+
+Now:
+
+Add Subscription
+
+Select:
+
+Email
+
+Enter:
+
+Your Email Address
+
+Click:
+
+Create Subscription
+
+Step 10: Verify Email
+
+Open your email inbox.
+
+You will receive:
+
+Oracle Notification Email
+
+Click:
+
+Confirm Subscription
+
+Without confirmation alerts will not work.
+
+Step 11: Save Alarm
+
+Click:
+
+Create Alarm
+
+Alarm is now active.
+
+Step 12: Test Alert
+
+To increase CPU usage:
+
+Open compute instance terminal
+Run:
+yes > /dev/null &
+
+This increases CPU load.
+
+Wait 1–2 minutes.
+
+Step 13: Check Alert Notification
+
+Open email.
+
+You will receive:
+
+CPU usage exceeded threshold
+
+This means alarm works correctly.
+
+Step 14: Stop CPU Load
+
+Run:
+
+pkill yes
+
+CPU usage returns normal.
+
+Implementation & Result
+
+Successfully:
+
+Configured monitoring alarm
+Set CPU usage threshold
+Configured email notifications
+Verified alert generation
+
+Cloud monitoring alerts were configured successfully.
